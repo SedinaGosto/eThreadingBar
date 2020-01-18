@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:eThreadinBar.MobileApp1.ViewModels"
+             mc:Ignorable="d"
+             x:Class="eThreadinBar.MobileApp1.Views.Registracija">
+    <ContentPage.BindingContext>
+        <viewModel:RegistracijaViewModel></viewModel:RegistracijaViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView BackgroundColor="White">
+            <StackLayout  HorizontalOptions="FillAndExpand" Padding="30" VerticalOptions="CenterAndExpand" >
+                <StackLayout  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                    <Image Source="tbb.png" HorizontalOptions="FillAndExpand"></Image>
+                </StackLayout>
+               
+                <Entry  x:Name="Ime" Text="{ Binding Ime}" Placeholder="Ime" ></Entry>
+                <Label x:Name="Imegreska" Text=" " TextColor="Red" IsVisible="False"></Label>
+                <!--<Label Text="Prezime"></Label>-->
+                <Entry x:Name="Prezime" Text="{ Binding Prezime}" Placeholder="Prezime"></Entry>
+                <Label x:Name="Prezimegreska" Text=" " TextColor="Red" IsVisible="False"></Label>
+
+                <!--<Label Text="Telefon"></Label>-->
+                <Entry x:Name="Telefon" Text="{ Binding Telefon}" Placeholder="Telefon"></Entry>
+                <Label x:Name="telefongreska" Text=" " TextColor="Red" IsVisible="False"></Label>
+
+                <!--<Label Text="Email"></Label>-->
+                <Entry x:Name="Email" Text="{ Binding Email}" Placeholder="Email"></Entry>
+                <Label x:Name="emailgreska" Text=" " TextColor="Red" IsVisible="False"></Label>
+
+                <Label Text="Odaberite grad:" TextColor="Gray"></Label>
+                <Picker x:Name="Gradovi" ItemsSource="{Binding GradoviList}" ItemDisplayBinding="{Binding Naziv}" ></Picker>
+                <Label x:Name="gradgreska" Text=" " TextColor="Red" IsVisible="False"></Label>
+
+                <!--<Label Text="Korisničko ime" ></Label>-->
+                <Entry x:Name="KorisnickoIme" Text="{Binding KorisnickoIme} " Placeholder="Korisnicko ime"></Entry>
+                <Label x:Name="korisnickoimegreska" Text=" " TextColor="Red" IsVisible="False"></Label>
+
+                <!--<Label  Text="Lozinka"></Label>-->
+                <Entry x:Name="Lozinka" Text="{Binding Lozinka}" IsPassword="True" Placeholder="Lozinka"></Entry>
+                <Label x:Name="lozinkagreska" Text=" " TextColor="Red" IsVisible="False"></Label>
+
+                <!--<Label  Text="Potvrda lozinke"></Label>-->
+                <Entry x:Name="PotvrdaLozinke" Text="{Binding PotvrdaLozinke}" IsPassword="True" Placeholder="Potvrda lozinke"></Entry>
+                <Label x:Name="Lozinkapotvrdagreska" Text=" " TextColor="Red" IsVisible="False"></Label>
+
+                <Button Clicked="Button_Clicked"   BackgroundColor="SlateGray" Padding="5" HorizontalOptions="FillAndExpand" Text="Registriraj se" TextColor="White" BorderColor="LightGray" BorderWidth="1"></Button>
+                <Label IsVisible="{Binding IsBusy}" Text="..."></Label>
+                <StackLayout>
+                    <StackLayout>
+                        <Button BackgroundColor="SlateGray"  Padding="5" Text="Već imam račun!" Clicked="Button_Clicked_1" TextColor="White" BorderColor="LightGray" BorderWidth="1" ></Button>
+                    </StackLayout>
+
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

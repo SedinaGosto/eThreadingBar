@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:eThreadinBar.MobileApp1.ViewModels"
+             mc:Ignorable="d"
+             x:Class="eThreadinBar.MobileApp1.Views.TerminiPage">
+    <ContentPage.BindingContext>
+        <vm:TerminiViewModel>
+        </vm:TerminiViewModel>
+    </ContentPage.BindingContext>
+ 
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout BackgroundColor="GhostWhite" HeightRequest="80">
+                <Label Text="Slobodni termini"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" FontSize="20"  FontAttributes="Italic"/>
+                <Label Text="{Binding _uposlenik.FirstLastName}"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" FontSize="15"  FontAttributes="Bold"/>
+            </StackLayout>
+            <StackLayout Padding="8">
+                <Label Text="Odaberite termin koji želite da rezervišete: " FontAttributes="Italic"></Label>
+            </StackLayout>
+            <ListView ItemsSource="{Binding termini}" ItemSelected="ListView_OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" >
+                               
+                                <StackLayout BackgroundColor="LightGoldenrodYellow" Padding="20">
+                                    <Label Text="{Binding VrijemeTermina}" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16" TextColor="Black"
+                                      />
+
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:eThreadinBar.MobileApp1.ViewModels"
+             mc:Ignorable="d"
+             x:Class="eThreadinBar.MobileApp1.Views.RezervacijaPage">
+    <ContentPage.BindingContext>
+        <viewModel:RezervacijaViewModel></viewModel:RezervacijaViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView BackgroundColor="White">
+            <StackLayout  HorizontalOptions="FillAndExpand" Padding="30" VerticalOptions="CenterAndExpand" >
+                <StackLayout  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                    <Image Source="tbb.png" HorizontalOptions="FillAndExpand"></Image>
+                </StackLayout>
+                <Label Text="Datum rezervacije" TextColor="SkyBlue"></Label>
+                <DatePicker x:Name="DatumRodjenja" IsEnabled="False" Date="{Binding DatumRezervacije}"></DatePicker>
+                <Label Text="Vrijeme termina: " TextColor="SkyBlue"></Label>
+                <DatePicker x:Name="DatumTermina" IsEnabled="False" Date="{Binding Vrijemetermina}" Format="D"></DatePicker>
+               
+                <Label Text="Odaberite tretman:" TextColor="SkyBlue"></Label>
+                <Picker x:Name="Tretmani" ItemsSource="{Binding TretmanList}" ItemDisplayBinding="{Binding NazivCijena}" ></Picker>
+                <Label x:Name="tretmanigreska" Text=" " TextColor="Red" IsVisible="False"></Label>
+                <Button Clicked="Button_Clicked"  BackgroundColor="SlateGray" Padding="5" HorizontalOptions="FillAndExpand" Text="Kreiraj rezervaciju" TextColor="White" BorderColor="LightGray" BorderWidth="1"></Button>
+                <Label IsVisible="{Binding IsBusy}" Text="Kreiranje rezervacije u toku..." FontAttributes="Bold"></Label>
+                <StackLayout>
+                 
+
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:eThreadinBar.MobileApp1.ViewModels"
+             xmlns:local="clr-namespace:eThreadinBar.MobileApp1.Converters"
+             mc:Ignorable="d"
+             x:Class="eThreadinBar.MobileApp1.Views.NovostiPage">
+
+    <ContentPage.BindingContext>
+        <vm:NovostiViewModel>
+        </vm:NovostiViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:ImageConverter x:Key="imgConv"></local:ImageConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout BackgroundColor="GhostWhite" HeightRequest="80">
+                <Label Text="Novosti"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" FontSize="24" />
+            </StackLayout>
+            <StackLayout    VerticalOptions="FillAndExpand" 
+                HorizontalOptions="FillAndExpand" Margin="10">
+                <Label Text="Odaberite kategoriju: " TextColor="Gray" FontSize="12"></Label>
+            <Picker ItemsSource="{Binding KategorijaList}" ItemDisplayBinding="{Binding Naziv}" SelectedItem="{Binding Kategorija}"></Picker>
+        </StackLayout>
+            <ListView ItemsSource="{Binding NovostiList}" ItemSelected="ListView_OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" Orientation="Horizontal">
+                                <StackLayout>
+                                    <Image WidthRequest="100" HeightRequest="100"  Source="{Binding Slika, Converter={StaticResource imgConv}}"></Image>
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding Naslov}" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16" TextColor="SkyBlue"
+                                      />
+                                <Label Text="{Binding DatumObjave,StringFormat='{0:d}'}"
+                                 d:Text="{Binding .}"
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemTextStyle}"
+                                FontSize="10" />
+                              
+                                <Label Text="{Binding Podnaslov}" 
+                                d:Text="Item descripton"
+                                LineBreakMode="WordWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+       
+
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:eThreadinBar.MobileApp1.ViewModels"
+             mc:Ignorable="d"
+             x:Class="eThreadinBar.MobileApp1.Views.LoginPage">
+
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+
+       
+        <StackLayout Padding="8"  VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Margin="10">
+            <StackLayout  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Image Source="tbb.png" ></Image>
+            </StackLayout>
+           
+                <!--<Label Text="Korisnicko ime"></Label>-->
+            <Entry Text="{Binding Username}" Placeholder="Korisnicko ime"></Entry>
+            <!--<Label Text="Password"></Label>-->
+            <Entry Text="{Binding Password}" Placeholder="Password" IsPassword="True"></Entry>
+         
+            <StackLayout Padding="0,20,0,0">
+                
+          
+            <Button Text="Login" BackgroundColor="SlateGray" TextColor="White" Command="{Binding LoginCommand}" Padding="6" BorderColor="LightGray" BorderWidth="1"></Button>
+            </StackLayout>
+            <StackLayout Padding="0,5,0,0">
+                <Button Text="Registriraj se" Clicked="Button_Clicked"
+                   BackgroundColor="SlateGray" Padding="6" TextColor="White" BorderColor="LightGray" BorderWidth="1"></Button>
+        </StackLayout>
+        <Label IsVisible="{Binding IsBusy}" Text="Prijavljivanje..."></Label>
+            
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

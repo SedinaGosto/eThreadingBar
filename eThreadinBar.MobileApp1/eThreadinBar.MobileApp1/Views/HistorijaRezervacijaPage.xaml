@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:eThreadinBar.MobileApp1.ViewModels"
+             mc:Ignorable="d"
+             x:Class="eThreadinBar.MobileApp1.Views.HistorijaRezervacijaPage">
+    <ContentPage.BindingContext>
+        <vm:HistorijaRezervacijaViewModel>
+        </vm:HistorijaRezervacijaViewModel>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout BackgroundColor="GhostWhite" HeightRequest="80">
+                <Label Text="Vaše rezervacije" TextDecorations="Underline"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" FontSize="20"  FontAttributes="Italic"/>
+             
+            </StackLayout>
+            <StackLayout Padding="8">
+                <Label Text="Prikaz detlja klikom na rezervaciju!" FontAttributes="Italic"></Label>
+            </StackLayout>
+            <ListView ItemsSource="{Binding rezervacijeList}" ItemSelected="ListView_OnItemSelected" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" >
+
+                                <StackLayout  BackgroundColor="LightGoldenrodYellow" Padding="10">
+                                  
+                                    <Label Text="{Binding Tretman}" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16" TextColor="Black"
+                                      />
+                                    <Label Text="Rezervisano na dan: " FontAttributes="Italic"></Label>
+                                    <Label Text="{Binding DatumRezervacije}" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="12" TextColor="Black"
+                                      />
+
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout Padding="8">
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Ukupno utrošeno:    " FontAttributes="Bold" />
+                                <Span Text="{Binding Ukupno}"></Span>
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+        </StackLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>

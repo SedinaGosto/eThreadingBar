@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="eThreadinBar.MobileApp1.Views.MapPage">
+    <ScrollView>
+ 
+  
+            <StackLayout>
+            <Image Source="tbb.png" HorizontalOptions="FillAndExpand"></Image>
+            <Label FontSize="Title" Margin="10" HorizontalOptions="Center" Text="O nama" TextDecorations="Underline" FontAttributes="Bold"></Label>
+
+            <Label FontSize="Subtitle" Margin="10"  Text="'Threading bar nudi usluge depilacije koncem tj.threading metodom (obrve, lice). Nudimo usluge profesionalnog šminkanja za sve prilike.Threading bar ima u ponudi i brze usluge threadinga bez naručivanja."/>
+            <Label FontSize="Title" Margin="10" Text="Prednosti čupanja obrva koncem" TextDecorations="Underline" FontAttributes="Bold"></Label>
+            <Label FontSize="Subtitle" Margin="10"  Text="Za razliku od čupanja obrva pincetom, threadingom povlačimo sve dlačice odjednom. Također, sitne dlačice neće umaći jer konac može uhvatiti i dlačice duge tek 1 milimetar."/>
+            <Label FontSize="Subtitle" Margin="10"  Text="Čupanje obrva koncem najpreciznija je metoda jer linijom konca možemo točno odrediti koje ćemo područje depilirati, pa je lako izraditi savršen luk. Ako je potrebno, može se odstraniti samo jedna dlačica ili pak čitav red kako bismo dobili željeni oblik."/>
+            <Label FontSize="Subtitle" Margin="10"  Text="Threading je mnogima bolja opcija i od epilacije voskom, jer nema osjećaja ljepljivosti i muke s odstranjivanjem ostataka voska. Također, ne odstranjuje se površinski sloj kože zbog čega koža ostaje glatka i mekana."/>
+            <Label FontSize="Subtitle" Margin="10"  Text="Većini žena ova metoda nije bolna, a s obzirom na to da se dlačice odstranjuju odjednom, puno kraće traje od klasične depilacije pincetom ili voskom."/>
+            <Label FontSize="Subtitle" Margin="10"  Text="Većini žena ova metoda nije bolna, a s obzirom na to da se dlačice odstranjuju odjednom, puno kraće traje od klasične depilacije pincetom ili voskom."/>
+            <Label FontSize="Title" Margin="10" Text="Kako konac odstranjuje dlačice" TextDecorations="Underline" FontAttributes="Bold"></Label>
+            <Label FontSize="Subtitle" Margin="10" Text="Za threading se koristi poseban pamučno-svileni konac presvučen antibakterijskim filmom kako ne bi došlo do prodora bakterija u pore. Konac je nježan prema koži i uz pravilnu upotrebu ne bi trebalo doći do iritacije kože."></Label>
+            <Image Source="threading.jpg" HorizontalOptions="FillAndExpand"></Image>
+            <Label FontSize="Subtitle" Margin="10" Text="Konac se prilikom depilacije valja duž kože pri čemu se dlačice pletu oko njega i potom čupaju iz korijena. Konac će zahvatiti sve sitne i svijetle dlačice te ostaviti potpuno glatku kožu." ></Label>
+            <Label FontSize="Subtitle" Margin="10" Text="Rezultati traju otprilike 3 do 4 tjedna, a kad dlačice izrastu u visini milimetra može se ponoviti postupak." ></Label>
+
+
+
+        </StackLayout>
+
+    </ScrollView>
+</ContentPage>

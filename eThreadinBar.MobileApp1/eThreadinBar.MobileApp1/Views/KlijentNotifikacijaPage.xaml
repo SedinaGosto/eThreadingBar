@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:eThreadinBar.MobileApp1.ViewModels"
+             mc:Ignorable="d"
+             x:Class="eThreadinBar.MobileApp1.Views.KlijentNotifikacijaPage">
+    <ContentPage.BindingContext>
+        <vm:KlijentNotifikacijaViewModel>
+        </vm:KlijentNotifikacijaViewModel>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout BackgroundColor="GhostWhite" HeightRequest="80">
+                <Label Text="Vaše rezervacije" TextDecorations="Underline"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" FontSize="20"  FontAttributes="Italic"/>
+
+            </StackLayout>
+            <StackLayout Padding="8">
+                <Label Text="Klikom na notifikaciju, bit ce oznacena kao procitana!" FontAttributes="Italic"></Label>
+            </StackLayout>
+            <ListView ItemsSource="{Binding n}" ItemSelected="ListView_OnItemSelected" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" >
+
+                                <StackLayout  BackgroundColor="LightGoldenrodYellow" Padding="10">
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <FormattedString.Spans>
+                                                    <Span Text="Rezervacija za tretman " FontAttributes="Italic" />
+                                                    <Span Text="{Binding Tretman}" FontAttributes="Bold" />
+
+
+                                                </FormattedString.Spans>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <FormattedString.Spans>
+                                                    <Span Text="kod uposlenika " FontAttributes="Italic" />
+                                                    <Span Text="{Binding Uposlenik}" FontAttributes="Bold" />
+                                                    <Span Text=" je uspjesno odobrena." FontAttributes="Bold" />
+
+
+
+                                                </FormattedString.Spans>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <FormattedString.Spans>
+                                                    <Span Text="Podsjecamo vas da je vrijeme termina  " FontAttributes="Italic" />
+                                                    <Span Text="{Binding VrijemeTermina}" FontAttributes="Bold" />
+                                                    <Span Text="!" FontAttributes="Italic" />
+
+
+
+                                                </FormattedString.Spans>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                 
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout Padding="8">
+                
+            </StackLayout>
+        </StackLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>

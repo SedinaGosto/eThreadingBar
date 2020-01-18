@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:eThreadinBar.MobileApp1.ViewModels"
+             mc:Ignorable="d"
+             x:Class="eThreadinBar.MobileApp1.Views.KorisnickiProfilPage">
+    <ContentPage.BindingContext>
+        <viewModel:KorisnickiProfilViewModel></viewModel:KorisnickiProfilViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView BackgroundColor="White">
+            <StackLayout  HorizontalOptions="FillAndExpand" Padding="30" VerticalOptions="CenterAndExpand" >
+                <StackLayout  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                    <Image Source="tbb.png" HorizontalOptions="FillAndExpand"></Image>
+                </StackLayout>
+                <StackLayout Padding="20">
+                    <Label Text="Korisnicki profil" HorizontalOptions="Center" TextDecorations="Underline" FontSize="15" FontAttributes="Bold"></Label>
+                </StackLayout>
+                <StackLayout  Orientation="Horizontal">
+                    <StackLayout>
+                        <Image Source="Profile.png" HeightRequest="200" WidthRequest="200"></Image></StackLayout>
+                    <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                        <Label Text="Ime" FontAttributes="Italic"></Label>
+                <Entry Text="{Binding Ime}" IsEnabled="False" TextColor="Black"></Entry>
+                <Label Text="Prezime" FontAttributes="Italic"></Label>
+                <Entry Text="{Binding Prezime}" IsReadOnly="True" IsEnabled="False"></Entry>
+                        <Label Text="Broj telefona" FontAttributes="Italic"></Label>
+                <Entry Text="{Binding BrojTelefona}" IsReadOnly="True" IsEnabled="False"></Entry>
+                    </StackLayout>
+                </StackLayout>
+                <Button  BackgroundColor="SlateGray" Padding="5" HorizontalOptions="Center" Clicked="Button_Clicked" WidthRequest="300" Text="Izmijeni podatke" TextColor="White" BorderColor="LightGray" BorderWidth="1"></Button>
+                <Label IsVisible="{Binding IsBusy}" Text="..."></Label>
+                <StackLayout>
+                
+
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

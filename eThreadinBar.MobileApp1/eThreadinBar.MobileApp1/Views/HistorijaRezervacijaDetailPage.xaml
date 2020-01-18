@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:eThreadinBar.MobileApp1.ViewModels"
+             mc:Ignorable="d"
+             x:Class="eThreadinBar.MobileApp1.Views.HistorijaRezervacijaDetailPage">
+    <ContentPage.BindingContext>
+        <viewModel:HistorijaRezervacijaDetailViewModel></viewModel:HistorijaRezervacijaDetailViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView BackgroundColor="White">
+            <StackLayout  HorizontalOptions="FillAndExpand" Padding="30" VerticalOptions="CenterAndExpand" >
+                <StackLayout  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                    <Image Source="tbb.png" HorizontalOptions="FillAndExpand"></Image>
+                </StackLayout>
+                <StackLayout Padding="35">
+                    <Label Text="Detalji o rezervaciji" VerticalOptions="Center" HorizontalOptions="Center"
+                       TextDecorations="Underline" FontAttributes="Bold" FontSize="16"
+                       ></Label>
+                </StackLayout>
+                <StackLayout Padding="8">
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="Uposlenik:           " FontAttributes="Bold" />
+                                    <Span Text="{Binding Uposlenik}"></Span>
+                                    
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+
+                <StackLayout Padding="8">
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="Tretman:             " FontAttributes="Bold" />
+                                    <Span Text="{Binding Tretman}"></Span>
+
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+                <StackLayout Padding="8">
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="Cijena:                " FontAttributes="Bold" />
+                                    <Span Text="{Binding Cijena}"></Span>
+
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+
+                <StackLayout Padding="8">
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="Datum rezervacije:      " FontAttributes="Bold" />
+                                    <Span Text="{Binding rezervacija.DatumRezervacije}"></Span>
+
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+                <StackLayout Padding="8">
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="Vrijeme termina:         " FontAttributes="Bold" />
+                                    <Span Text="{Binding VrijemeTermina}"></Span>
+
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+                <StackLayout Padding="20" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Button x:Name="AktivnaRezervacija" BackgroundColor="Black" Padding="5" HorizontalOptions="Center" IsEnabled="{Binding IsBusy}" WidthRequest="200" Text="Otkazi rezervaciju" TextColor="White" BorderColor="LightGray" BorderWidth="3" Clicked="AktivnaRezervacija_Clicked"></Button>
+                    <Label x:Name="TextNapomena" Text=" " ></Label>
+                    <Label Text="...." FontAttributes="Bold" IsVisible="{Binding Prikazi}"></Label>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+       
+    </ContentPage.Content>
+</ContentPage>
