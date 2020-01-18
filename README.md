@@ -1,4 +1,4 @@
-# eThredingBar
+# eThreadingBar
 Mobile and desktop application
 
 Pristupni podaci: 
