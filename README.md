@@ -10,6 +10,6 @@ DESKTOP
    Lozinka: test
 
 MOBILE
- korisnicko ime: mobile
+ 1. korisnicko ime: mobile
  lozinka:test
 
